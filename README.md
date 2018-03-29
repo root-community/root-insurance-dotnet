@@ -1,24 +1,51 @@
-# 🌐👋 - Hello World  
+<h1>ROOT SDK</h1>
 
-Root is a company built by developers for developers. Open Source Software is part of our culture. We open-source as much of our codebase as we can.
+This SDK is used to develop applications that leverage the ROOT API.
 
-Our SDKs are community maintained. (because we’re not experts in go, or lolcode, or ruby, or swift or rust or any of the plethora of wonderful languages living out in the wild).
+> THIS LIBRARY IS NOT COMPLETE AND IS SUBJECT TO CHANGE.
 
-This repo for the .NET Insurance SDK is currently just a placeholder, but you can change that.
+<h4>Usage:</h4>
 
-For help and support, please reach out to us on the Root Club Slack.
+Startup.cs
+```
+ public void ConfigureServices(IServiceCollection services)
+ {
+     services.AddMvc();
+     services.AddLogging();
+     
+     services.AddRoot(opts => Configuration.GetSection("RootOptions").Bind(opts));
+ }
+```
 
-## Contributing
-If you wish to contribute to this repository, please fork it and send a PR our way.
+where RootOptions will be the appsettings node containing your api key.
 
-## Publishing
+appsettings.json
+```
+"RootOptions":  {
+  "ApiKey": "<your_very_private_key>"
+}
+```
 
-There are a few things to do if you want to publish this repository as an official Root package:
+Standard dotnetcore rules apply. 
+The key can also be set via environment variables, or user secrets
 
-- [ ] Please ensure a Root Team member is able to publish a fix to the package should you be unavailable
-- [ ] Write a short explanation on how to to publish in this README, or alternatively, set up a CI build which can automatically build and publish the package. 
+Then in your services via DI, inject either of the following:
+```
+// this exposes all the clients as a single higher level service
+public MyRootService(IRootClient rootClient)
+{
+   _root = rootClient;
+}
 
-## Code of Conduct
-Root’s developers and our community are expected to abide by the [Contributor Covenant Code of Conduct](https://github.com/root-community/root-insurance-go/tree/master/CODE_OF_CONDUCT.md). Play nice.
+public MyInsuranceService(IRootInsuranceClient insuranceClient)
+{
+   _insuranceClient = insuranceClient;
+}
 
+public MyBankingService(IRootBankingClient bankingClient)
+{
+   _bankingClient = bankingClient;
+}
+```
 
+> MORE DOCS TO COME...
