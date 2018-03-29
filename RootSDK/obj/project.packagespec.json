@@ -1,0 +1,75 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/rohan/source/own/root-sdk/RootSDK/RootSDK.csproj",
+    "projectName": "RootSDK",
+    "projectPath": "/Users/rohan/source/own/root-sdk/RootSDK/RootSDK.csproj",
+    "outputPath": "/Users/rohan/source/own/root-sdk/RootSDK/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.AspNet.WebApi.Client": {
+          "target": "Package",
+          "version": "[5.2.4, )"
+        },
+        "Microsoft.AspNet.WebApi.Core": {
+          "target": "Package",
+          "version": "[5.2.4, )"
+        },
+        "Microsoft.AspNetCore.Http": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "Microsoft.AspNetCore.Http.Extensions": {
+          "target": "Package",
+          "version": "[2.0.2, )"
+        },
+        "Microsoft.Extensions.Logging": {
+          "target": "Package",
+          "version": "[2.0.1, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.0, )",
+          "autoReferenced": true
+        },
+        "Microsoft.Net.Http": {
+          "target": "Package",
+          "version": "[2.2.29, )"
+        },
+        "Newtonsoft.Json": {
+          "target": "Package",
+          "version": "[11.0.1, )"
+        },
+        "System.Net.Http": {
+          "target": "Package",
+          "version": "[4.3.3, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}
